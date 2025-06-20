@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    
+//  Submitting data  
     console.log("Submitting data:", obj);
 
 fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cmDDgJn44neGbQH6WHn-CZ3tbTSU88i5zmg/exec', {
@@ -53,6 +55,8 @@ fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cm
 .catch(error => {
   console.error("Submission failed:", error);
   alert("There was a problem submitting your trailwork. Try again later.");
+});
+
 });
 
 
