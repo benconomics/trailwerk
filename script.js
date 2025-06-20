@@ -1,59 +1,64 @@
 // 1. Define trail system and trails
-const trailOptions = {
-  "Carpenter Bypass": ["Y2K", "Mama Tried", "Ode to Joy", "The Gift"],
-  "Thurston": ["Acer Spades", "Yew Haw", "Super Maple", "Chinquapin Chutes", "Basalt Rim"],
-  "Ridgeline": ["Baby Steps", "PipeDream"],
-  "Hardesty": ["Goodman", "Hardesty", "Willamette"]
-};
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmHSnqdm2nm_W3A44urVbmlQdD9jYnA4Xakbvgc3cXlpsGhumpoXfdBxKWTczB4wM/exec";
 
-// 2. Populate trail dropdown when system is selected
-document.addEventListener("DOMContentLoaded", function () {
-  const systemSelect = document.getElementById('trail-system');
-  const trailSelect = document.getElementById('trail');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("trailwork-form");
 
-  systemSelect.addEventListener('change', function () {
-    const trails = trailOptions[this.value] || [];
-    trailSelect.innerHTML = trails.map(trail =>
-      `<option value="${trail}">${trail}</option>`
-    ).join('');
+  // Trail options by system
+  const trailOptions = {
+    "Carpenter Bypass": ["Y2K", "Mama Tried", "Ode to Joy", "Hit Parade", "SST", "Boundary", "Don Sled", "Alpha", "Can’t Be Done"],
+    "Thurston": ["Dead Mountain", "Lawler", "Hardesty", "Larison Rock"],
+    "Ridgeline": ["Baby Steps", "Pipedream"],
+    "Hardesty": ["Goodman", "Hardesty", "Willamette"]
+  };
+
+  // Populate trails when system changes
+  const systemSelect = document.getElementById("trailSystem");
+  const trailSelect = document.getElementById("trail");
+
+  systemSelect.addEventListener("change", () => {
+    const trails = trailOptions[systemSelect.value] || [];
+    trailSelect.innerHTML = "";
+    trails.forEach(trail => {
+      const opt = document.createElement("option");
+      opt.value = trail;
+      opt.textContent = trail;
+      trailSelect.appendChild(opt);
+    });
   });
 
-  // 3. Handle form submission
-  document.getElementById('trailwork-form').addEventListener('submit', function (e) {
+  // Handle form submit
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
-    const obj = {};
-    data.forEach((val, key) => {
-      if (key === 'worktype') {
-        if (!obj[key]) obj[key] = [];
-        obj[key].push(val);
-      } else {
-        obj[key] = val;
+
+    const data = {
+      name: document.getElementById("name").value,
+      date: document.getElementById("date").value,
+      trailSystem: systemSelect.value,
+      trail: trailSelect.value,
+      workTypes: Array.from(document.querySelectorAll('input[name="workType"]:checked')).map(el => el.value),
+      hours: document.getElementById("hours").value,
+      notes: document.getElementById("notes").value
+    };
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
       }
-    });
-
-    console.log("Submitting data:", obj);
-
-    fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cmDDgJn44neGbQH6WHn-CZ3tbTSU88i5zmg/exec', {
-      method: 'POST',
-      body: JSON.stringify(obj),
-      headers: { 'Content-Type': 'application/json' }
     })
+    .then(res => res.text())
     .then(response => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.text(); // handle text from Apps Script
+      alert("Trail work submitted. Thank you!");
+      form.reset();
+      trailSelect.innerHTML = ""; // clear trail list
     })
-    .then(() => {
-      form.style.display = 'none';
-      document.getElementById('confirmation').style.display = 'block';
-    })
-    .catch(error => {
-      console.error("Submission failed:", error);
-      alert("There was a problem submitting your trailwork. Try again later.");
+    .catch(err => {
+      alert("Submission failed. Please try again.");
+      console.error("Error:", err);
     });
-  }); // closes form submit
-}); // closes DOMContentLoaded
+  });
+});
+
 
