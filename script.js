@@ -27,7 +27,7 @@ document.getElementById('trailwork-form').addEventListener('submit', function(e)
 
   console.log("Submitting data:", obj);
 
-  fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
+  fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cmDDgJn44neGbQH6WHn-CZ3tbTSU88i5zmg/exec', {
     method: 'POST',
     body: JSON.stringify(obj),
     headers: { 'Content-Type': 'application/json' }
