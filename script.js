@@ -33,30 +33,27 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    
-//  Submitting data  
     console.log("Submitting data:", obj);
 
-fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cmDDgJn44neGbQH6WHn-CZ3tbTSU88i5zmg/exec', {
-  method: 'POST',
-  body: JSON.stringify(obj),
-  headers: { 'Content-Type': 'application/json' }
-})
-.then(response => {
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.text(); // handle text from Apps Script
-})
-.then(() => {
-  form.style.display = 'none';
-  document.getElementById('confirmation').style.display = 'block';
-})
-.catch(error => {
-  console.error("Submission failed:", error);
-  alert("There was a problem submitting your trailwork. Try again later.");
-});
-
-});
-
+    fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cmDDgJn44neGbQH6WHn-CZ3tbTSU88i5zmg/exec', {
+      method: 'POST',
+      body: JSON.stringify(obj),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.text(); // handle text from Apps Script
+    })
+    .then(() => {
+      form.style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+    })
+    .catch(error => {
+      console.error("Submission failed:", error);
+      alert("There was a problem submitting your trailwork. Try again later.");
+    });
+  }); // closes form submit
+}); // closes DOMContentLoaded
 
