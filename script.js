@@ -41,4 +41,4 @@ fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cm
   alert("There was a problem submitting your trailwork. Try again later.");
 });
 
-}); //
+
