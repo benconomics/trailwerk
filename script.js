@@ -32,13 +32,14 @@ fetch('https://script.google.com/macros/s/AKfycbykvnNEtJJd_bgnpCDVhnc_lNsR8wZ5cm
   body: JSON.stringify(obj),
   headers: { 'Content-Type': 'application/json' }
 })
-.then(() => {
-  form.style.display = 'none';
-  document.getElementById('confirmation').style.display = 'block';
-})
-.catch(error => {
-  console.error("Submission failed:", error);
-  alert("There was a problem submitting your trailwork. Try again later.");
+  }).then(() => {
+    form.style.display = 'none';
+    document.getElementById('confirmation').style.display = 'block';
+  }).catch(error => {
+    console.error("Submission failed:", error);
+    alert("There was a problem submitting your trailwork. Try again later.");
+  });
 });
+
 
 
