@@ -1,1 +1,29 @@
-body { font-family: sans-serif; margin: 2em; background: #f4f4f4; }
+body {
+  font-family: sans-serif;
+  margin: 2em;
+  background: #f4f4f4;
+  color: #333;
+}
+header {
+  background-color: #2e7d32;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+form {
+  background: white;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+fieldset {
+  margin-top: 1em;
+}
+#confirmation {
+  text-align: center;
+  padding: 2em;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 5px;
+  margin-top: 2em;
+}

@@ -25,12 +25,17 @@ document.getElementById('trailwork-form').addEventListener('submit', function(e)
     }
   });
 
-  fetch('https://script.google.com/macros/s/AKfycbzPvP_EwBR_iwuMNC8Vt0pswys_u-ccS2VQHJNjBu5ZPlWzvU3d95bp7oXP4d3sRow/exec', {
+  console.log("Submitting data:", obj);
+
+  fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', {
     method: 'POST',
     body: JSON.stringify(obj),
     headers: { 'Content-Type': 'application/json' }
   }).then(() => {
     form.style.display = 'none';
     document.getElementById('confirmation').style.display = 'block';
+  }).catch(error => {
+    console.error("Submission failed:", error);
+    alert("There was a problem submitting your trailwork. Try again later.");
   });
-});
+}
