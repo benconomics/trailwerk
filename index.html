@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trailwerk - Log Your Trailwork</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Trailwerk</h1>
+    <p>Log your trailwork and keep the trails alive!</p>
+  </header>
+
+  <main>
+    <form id="trailwork-form">
+      <label>Name (optional): <input type="text" name="name" /></label>
+      <label>Date of Work: <input type="date" name="date" required /></label>
+
+      <label>Trail System:
+        <select id="trail-system" name="system" required>
+          <option value="">--Select--</option>
+          <option value="Carpenter Bypass">Carpenter Bypass</option>
+          <option value="Thurston">Thurston</option>
+          <option value="Ridgeline">Ridgeline</option>
+          <option value="Hardesty">Hardesty</option>
+        </select>
+      </label>
+
+      <label>Trail:
+        <select id="trail" name="trail" required></select>
+      </label>
+
+      <fieldset>
+        <legend>Work Types</legend>
+        <label><input type="checkbox" name="worktype" value="Brushing" /> Brushing</label>
+        <label><input type="checkbox" name="worktype" value="Drainage" /> Drainage</label>
+        <label><input type="checkbox" name="worktype" value="Tread work" /> Tread work</label>
+        <label><input type="checkbox" name="worktype" value="Structure work" /> Structure work</label>
+        <label><input type="checkbox" name="worktype" value="Trash cleanup" /> Trash cleanup</label>
+        <label><input type="checkbox" name="worktype" value="Signage" /> Signage</label>
+        <label><input type="checkbox" name="worktype" value="Other" /> Other</label>
+      </fieldset>
+
+      <label>Hours Worked: <input type="number" name="hours" step="0.1" required /></label>
+      <label>Notes: <textarea name="notes"></textarea></label>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="confirmation" style="display:none;">
+      <p>Thanks for logging your trailwork!</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
