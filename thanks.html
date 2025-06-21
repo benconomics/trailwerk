@@ -1,13 +1,76 @@
-<!-- thanks.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Thank you!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #f7faf6;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      color: #27341c;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .thankyou-card {
+      max-width: 420px;
+      margin-top: 2.5rem;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 2px 28px 4px #b5d19c33;
+      padding: 2.2rem 2.1rem 1.2rem 2.1rem;
+      text-align: center;
+      position: relative;
+    }
+    .ty-img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 14px 14px 0 0;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 18px #b5d19c33;
+    }
+    h1 {
+      color: #4b7a39;
+      margin-top: 0.7rem;
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+    p {
+      font-size: 1.12rem;
+      margin-bottom: 1.4rem;
+    }
+    a.button {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: linear-gradient(90deg, #65c150, #3d702e);
+      color: #fff;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      box-shadow: 0 2px 8px #b5d19c33;
+      transition: background 0.18s;
+    }
+    a.button:hover {
+      background: linear-gradient(90deg, #5aaa46, #346024);
+    }
+  </style>
 </head>
 <body>
-  <h1>Thank you for logging your trailwork!</h1>
-  <p>Your submission was received.</p>
-  <a href="/">Back to site</a>
+  <div class="thankyou-card">
+    <img src="trailwerk-images/werk.jpg" alt="Trailwork" class="ty-img">
+    <h1>Thank you for logging your trailwork!</h1>
+    <p>Your submission was received.<br>
+      Every hour you give keeps the trails open and fun for everyone.</p>
+    <a href="/" class="button">Back to Home</a>
+  </div>
 </body>
 </html>
+
