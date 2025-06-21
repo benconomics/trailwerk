@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
 }
 header {
-  background: url('trailwerk-images/DOD_WhiteText.png') center/cover no-repeat, #4b7a39;
+  background: no-repeat, #4b7a39;
   color: #fff;
   padding: 3rem 0 2rem 0;
   text-align: center;
