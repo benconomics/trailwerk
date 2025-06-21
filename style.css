@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
 }
 header {
-  background: url('trailwerk-images/DOD_WhiteText.png.jpg') center/cover no-repeat, #4b7a39;
+  background: url('trailwerk-images/DOD_WhiteText.png') center/cover no-repeat, #4b7a39;
   color: #fff;
   padding: 3rem 0 2rem 0;
   text-align: center;
@@ -37,51 +37,50 @@ main {
   box-shadow: 0 2px 28px 4px #b5d19c33;
   padding: 2.5rem 2.2rem 1.2rem 2.2rem;
 }
-form label {
-  display: block;
-  margin: 1.1rem 0 0.3rem 0;
-  font-weight: 500;
-}
-form input, form select, form textarea {
-  width: 100%;
-  padding: 0.57rem 0.6rem;
-  margin-bottom: 0.27rem;
-  border: 1.7px solid #b5d19c;
-  border-radius: 7px;
-  font-size: 1rem;
-  background: #f3f9ef;
-  transition: border-color 0.2s;
-}
-form input:focus, form select:focus, form textarea:focus {
-  outline: none;
-  border-color: #4b7a39;
-}
+form label,
 fieldset {
-  border: none;
-  margin-top: 1.2rem;
-  margin-bottom: 0.7rem;
-  padding: 0;
+  margin-top: 0.7rem;
+  margin-bottom: 0.15rem;
 }
-legend {
-  font-weight: 700;
-  color: #4b7a39;
-  font-size: 1.13em;
+
+form input,
+form select,
+form textarea {
+  margin-bottom: 0.12rem;
+  margin-top: 0.18rem;
+  /* ...rest of your existing styles... */
 }
+
+fieldset {
+  margin-bottom: 0.4rem;
+  padding-top: 0.3rem;
+}
+
 form button[type="submit"] {
   display: block;
   width: 100%;
-  padding: 0.97rem;
+  padding: 0.7rem 0;
   background: linear-gradient(90deg, #65c150, #3d702e);
   color: #fff;
   border: none;
-  border-radius: 9px;
-  font-size: 1.13rem;
+  border-radius: 8px;
+  font-size: 1.09rem;
   font-weight: bold;
-  margin-top: 1.6rem;
+  margin: 0.8rem 0 0.3rem 0;
   box-shadow: 0 2px 8px #b5d19c33;
   cursor: pointer;
   transition: background 0.18s;
+  letter-spacing: 0.01em;
 }
 form button[type="submit"]:hover {
   background: linear-gradient(90deg, #5aaa46, #346024);
 }
+
+/* Make checkboxes inline and less spread out */
+fieldset label {
+  display: inline-block;
+  margin-right: 1.1em;
+  margin-bottom: 0.2em;
+  font-weight: 400;
+}
+
