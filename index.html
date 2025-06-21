@@ -16,8 +16,6 @@
 <form name="trailwork" method="POST" data-netlify="true" action="/thanks">
   <input type="hidden" name="form-name" value="trailwork">
 
-
-
   <label>Name (optional):
     <input type="text" id="name" name="name" />
   </label>
@@ -69,6 +67,18 @@
   </main>
 
   <script src="script.js"></script>
+
+  <!-- Dummy hidden form for Netlify Forms detection -->
+  <form name="trailwork" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="date" name="date" />
+    <input type="text" name="trailSystem" />
+    <input type="text" name="trail" />
+    <input type="text" name="workType" />
+    <input type="number" name="hours" />
+    <textarea name="notes"></textarea>
+  </form>
 </body>
 </html>
+
 
