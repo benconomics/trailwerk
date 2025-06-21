@@ -19,7 +19,7 @@ header {
 .dirt-logo {
   display: block;
   margin: 0 auto 1rem auto;
-  max-width: 80px;
+  max-width: 100px;
   height: auto;
   filter: drop-shadow(0 2px 7px #27341c80);
 }
