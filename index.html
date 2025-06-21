@@ -13,7 +13,9 @@
   </header>
 
   <main>
-<form id="trailwork-form">
+<form id="trailwork-form" name="trailwork" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="trailwork">
+
   <label>Name (optional):
     <input type="text" id="name" name="name" />
   </label>
@@ -58,7 +60,6 @@
   <button type="submit">Submit</button>
 </form>
 
-
     <div id="confirmation" style="display:none;">
       <h2>Thanks for supporting our local trails.</h2>
       <p>It takes a community to keep them riding.</p>
@@ -68,3 +69,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
