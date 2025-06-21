@@ -8,13 +8,22 @@ body {
   min-height: 100vh;
 }
 header {
-  background: no-repeat, #4b7a39;
+  background: #4b7a39;
   color: #fff;
   padding: 3rem 0 2rem 0;
   text-align: center;
   border-bottom: 5px solid #b5d19c;
   box-shadow: 0 2px 12px #b5d19c60;
 }
+
+.dirt-logo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  max-width: 130px;
+  height: auto;
+  filter: drop-shadow(0 2px 7px #27341c80);
+}
+
 header h1 {
   margin: 0;
   font-size: 2.7rem;
