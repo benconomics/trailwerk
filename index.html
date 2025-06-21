@@ -13,40 +13,51 @@
   </header>
 
   <main>
-    <form id="trailwork-form">
-      <label>Name (optional): <input type="text" name="name" /></label>
-      <label>Date of Work: <input type="date" name="date" required /></label>
+<form id="trailwork-form">
+  <label>Name (optional):
+    <input type="text" id="name" name="name" />
+  </label>
 
-      <label>Trail System:
-        <select id="trailSystem" name="system" required>
-          <option value="">--Select--</option>
-          <option value="Carpenter Bypass">Carpenter Bypass</option>
-          <option value="Thurston">Thurston</option>
-          <option value="Ridgeline">Ridgeline</option>
-          <option value="Hardesty">Hardesty</option>
-        </select>
-      </label>
+  <label>Date of Work:
+    <input type="date" id="date" name="date" required />
+  </label>
 
-      <label>Trail:
-        <select id="trail" name="trail" required></select>
-      </label>
+  <label>Trail System:
+    <select id="trailSystem" name="trailSystem" required>
+      <option value="">--Select--</option>
+      <option value="Carpenter Bypass">Carpenter Bypass</option>
+      <option value="Thurston">Thurston</option>
+      <option value="Ridgeline">Ridgeline</option>
+      <option value="Hardesty">Hardesty</option>
+    </select>
+  </label>
 
-      <fieldset>
-        <legend>Work Types</legend>
-        <label><input type="checkbox" name="worktype" value="Brushing" /> Brushing</label>
-        <label><input type="checkbox" name="worktype" value="Drainage" /> Drainage</label>
-        <label><input type="checkbox" name="worktype" value="Tread work" /> Tread work</label>
-        <label><input type="checkbox" name="worktype" value="Structure work" /> Structure work</label>
-        <label><input type="checkbox" name="worktype" value="Trash cleanup" /> Trash cleanup</label>
-        <label><input type="checkbox" name="worktype" value="Signage" /> Signage</label>
-        <label><input type="checkbox" name="worktype" value="Other" /> Other</label>
-      </fieldset>
+  <label>Trail:
+    <select id="trail" name="trail" required></select>
+  </label>
 
-      <label>Hours Worked: <input type="number" name="hours" step="0.1" required /></label>
-      <label>Notes: <textarea name="notes"></textarea></label>
+  <fieldset>
+    <legend>Work Types</legend>
+    <label><input type="checkbox" name="workType" value="Brushing" /> Brushing</label>
+    <label><input type="checkbox" name="workType" value="Drainage" /> Drainage</label>
+    <label><input type="checkbox" name="workType" value="Tread work" /> Tread work</label>
+    <label><input type="checkbox" name="workType" value="Structure work" /> Structure work</label>
+    <label><input type="checkbox" name="workType" value="Trash cleanup" /> Trash cleanup</label>
+    <label><input type="checkbox" name="workType" value="Signage" /> Signage</label>
+    <label><input type="checkbox" name="workType" value="Other" /> Other</label>
+  </fieldset>
 
-      <button type="submit">Submit</button>
-    </form>
+  <label>Hours Worked:
+    <input type="number" id="hours" name="hours" step="0.1" required />
+  </label>
+
+  <label>Notes:
+    <textarea id="notes" name="notes"></textarea>
+  </label>
+
+  <button type="submit">Submit</button>
+</form>
+
 
     <div id="confirmation" style="display:none;">
       <h2>Thanks for supporting our local trails.</h2>
