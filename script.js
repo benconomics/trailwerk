@@ -1,5 +1,5 @@
 // 1. Define trail system and trails
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmHSnqdm2nm_W3A44urVbmlQdD9jYnA4Xakbvgc3cXlpsGhumpoXfdBxKWTczB4wM/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzl5S676cMoVZSx98Fiuqa9OC7Umaai6UQ0Qyf0tnywSD2tUe1cG3SkQ_alRSA24JE/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("trailwork-form");
